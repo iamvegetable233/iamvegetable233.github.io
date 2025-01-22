@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>2022逆向期末试题 | My Blog</title><meta name="keywords" content="re"><meta name="author" content="Lin"><meta name="copyright" content="Lin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="这课给分真离谱。 cpp.1 是RC4算法。易得到 12初始密钥0x0FC,0x0FB,0x3B,0x0D,0x73,0x6Ebyte_42C700为0x6E,0x65,0x11,0x0CF,0x1D,0x80,0x3B,0x4E,0x20,0x2A,0x0E0,0x0B6,0x0 使用解密程序进行解密，得到Network。 本题需要分析的地方没有结束。先将一些地址信息列在此处。var_1F4为我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2022逆向期末试题">
+<meta property="og:url" content="https://iamvegetable2.github.io/2022/07/re2022/index.html">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="这课给分真离谱。 cpp.1 是RC4算法。易得到 12初始密钥0x0FC,0x0FB,0x3B,0x0D,0x73,0x6Ebyte_42C700为0x6E,0x65,0x11,0x0CF,0x1D,0x80,0x3B,0x4E,0x20,0x2A,0x0E0,0x0B6,0x0 使用解密程序进行解密，得到Network。 本题需要分析的地方没有结束。先将一些地址信息列在此处。var_1F4为我">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png">
+<meta property="article:published_time" content="2022-07-16T14:41:30.000Z">
+<meta property="article:modified_time" content="2024-09-26T03:08:08.000Z">
+<meta property="article:author" content="Lin">
+<meta property="article:tag" content="re">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png"><link rel="shortcut icon" href="/img/26cd6c3cb17752c6.jpg"><link rel="canonical" href="https://iamvegetable2.github.io/2022/07/re2022/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '2022逆向期末试题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-26 11:08:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/newcss.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/16664460170395a0301b2df94e85a205610aaee598fd9ab6c.jpg" onerror="onerror=null;src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">My Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">2022逆向期末试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-07-16T14:41:30.000Z" title="发表于 2022-07-16 22:41:30">2022-07-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-26T03:08:08.000Z" title="更新于 2024-09-26 11:08:08">2024-09-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/re/">re</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="2022逆向期末试题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p>这课给分真离谱。</p>
+<h2 id="cpp-1">cpp.1</h2>
+<p>是RC4算法。易得到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">初始密钥0x0FC,0x0FB,0x3B,0x0D,0x73,0x6E</span><br><span class="line">byte_42C700为0x6E,0x65,0x11,0x0CF,0x1D,0x80,0x3B,0x4E,0x20,0x2A,0x0E0,0x0B6,0x0</span><br></pre></td></tr></table></figure>
+<p>使用解密程序进行解密，得到<code>Network</code>。<br>
+本题需要分析的地方没有结束。先将一些地址信息列在此处。var_1F4为我们加密所得字符串存储的地址，var_64为我们输入的字符串存储的地址。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">lea     eax, [ebp+var_64]</span><br><span class="line">push    eax</span><br><span class="line">push    offset aS       ; &quot;%s&quot;</span><br><span class="line">call    _scanf</span><br><span class="line">add     esp, 8</span><br><span class="line">push    0Ch             ; size_t</span><br><span class="line">lea     ecx, [ebp+var_64]</span><br><span class="line">push    ecx             ; char *</span><br><span class="line">lea     edx, [ebp+var_C8]</span><br><span class="line">push    edx             ; char *</span><br><span class="line">call    _strncpy</span><br><span class="line">add     esp, 0Ch</span><br><span class="line">lea     eax, [ebp+var_1F4]</span><br><span class="line">push    eax             ; int</span><br><span class="line">lea     ecx, [ebp+var_C8]</span><br><span class="line">push    ecx             ; char *</span><br><span class="line">call    sub_40100A</span><br><span class="line">add     esp, 8</span><br><span class="line">push    7               ; size_t</span><br><span class="line">lea     edx, [ebp+var_58]</span><br><span class="line">push    edx             ; char *</span><br><span class="line">lea     eax, [ebp+var_12C]</span><br><span class="line">push    eax             ; char *</span><br><span class="line">call    _strncpy</span><br></pre></td></tr></table></figure>
+<p>下面的代码要求将var_12C处字符串与byte_42C600进行异或，byte_42C600处字符串为<code>Notgood</code>，并使用strcpy将其复制到var_1E8处。var_12C处存储字符串与var_58处存储字符串相同，又因为var_58与var_64地址差12个字节，所以我们可以认为下列代码是对我们输入的字符串从第13字节开始进行处理。var_1E8与var_1F4也差12个字节，所以我们可以知道，var_1F4，即我们加密明文所得的字符串，只保留前12个字节，从第13字节开始，保留的是var_12C处字符串与byte_42C600进行异或的结果。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">cmp     [ebp+var_25C], 7</span><br><span class="line">jge     short loc_411C98</span><br><span class="line">mov     edx, [ebp+var_25C]</span><br><span class="line">movsx   eax, [ebp+edx+var_12C]</span><br><span class="line">mov     ecx, [ebp+var_25C]</span><br><span class="line">xor     edx, edx</span><br><span class="line">mov     dl, byte_42C600[ecx]</span><br><span class="line">xor     eax, edx</span><br><span class="line">mov     ecx, [ebp+var_25C]</span><br><span class="line">mov     [ebp+ecx+var_258], al</span><br><span class="line">jmp     short loc_411C53</span><br><span class="line">loc_411C53:</span><br><span class="line">mov     ecx, [ebp+var_25C]</span><br><span class="line">add     ecx, 1</span><br><span class="line">mov     [ebp+var_25C], ecx</span><br><span class="line">loc_411C98:             ; size_t</span><br><span class="line">push    7</span><br><span class="line">lea     edx, [ebp+var_258]</span><br><span class="line">push    edx             ; char *</span><br><span class="line">lea     eax, [ebp+var_1E8]</span><br><span class="line">push    eax             ; char *</span><br><span class="line">call    _strncpy</span><br><span class="line">add     esp, 0Ch</span><br><span class="line">mov     [ebp+var_25C], 0</span><br><span class="line">jmp     short loc_411CCB</span><br></pre></td></tr></table></figure>
+<p>判断的逻辑是要求我们将var_1F4地址处开始的13个字符与byte_42C700的前13个字符进行比较。var_1F4前12字节是RC4加密得到的，我们取出byte_42C700前12个字节进行解密，即我们之前求得的<code>NetworkClass</code>，byte_42C700的第13个字节为0x0，我们将它与byte_42C600第一个字节进行异或，求得我们输入的字符串第13个字符应该为<code>N</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">loc_411CCB:</span><br><span class="line">cmp     [ebp+var_25C], 13h</span><br><span class="line">jge     short loc_411D16</span><br><span class="line">mov     edx, [ebp+var_25C]</span><br><span class="line">xor     eax, eax</span><br><span class="line">mov     al, byte ptr [ebp+edx+var_1F4]</span><br><span class="line">mov     ecx, [ebp+var_25C]</span><br><span class="line">xor     edx, edx</span><br><span class="line">mov     dl, byte_42C700[ecx]</span><br><span class="line">cmp     eax, edx</span><br><span class="line">jz      short loc_411D14</span><br></pre></td></tr></table></figure>
+<p>综上，得到flag为<code>NetworkClassN</code>。</p>
+<h2 id="cpp-2">cpp.2</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">lea     edx, [ebp+var_444]</span><br><span class="line">push    edx             ; char *</span><br><span class="line">call    _strlen</span><br><span class="line">add     esp, 4</span><br><span class="line">mov     [ebp+var_454], eax</span><br><span class="line">cmp     [ebp+var_454], 5</span><br><span class="line">jnb     short loc_401D56</span><br></pre></td></tr></table></figure>
+<p>要求输入长度为大于等于5个字符。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mov     edx, [ebp+var_450]</span><br><span class="line">movsx   eax, [ebp+edx+var_444]</span><br><span class="line">cmp     eax, 41h</span><br><span class="line">jl      short loc_401DA5</span><br><span class="line">mov     ecx, [ebp+var_450]</span><br><span class="line">movsx   edx, [ebp+ecx+var_444]</span><br><span class="line">cmp     edx, 7Ah</span><br><span class="line">jle     short loc_401DBF</span><br></pre></td></tr></table></figure>
+<p>要求输入的字符再0x41到0x7A的范围内，包含了大小写字母和部分特殊符号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rdata:0042801C dword_42801C    dd 428A2F98h</span><br><span class="line">.rdata:00428020                 db  91h ; </span><br><span class="line">.rdata:00428021                 db  44h ; D</span><br><span class="line">.rdata:00428022                 db  37h ; 7</span><br><span class="line">.rdata:00428023                 db  71h ; q</span><br></pre></td></tr></table></figure>
+<p>可知为SHA-256。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">push    4</span><br><span class="line">lea     eax, [ebp+var_444]</span><br><span class="line">push    eax             ; char *</span><br><span class="line">lea     ecx, [ebp+var_44C]</span><br><span class="line">push    ecx             ; char *</span><br><span class="line">call    _strncpy</span><br></pre></td></tr></table></figure>
+<p>说明只对前四个字节进行处理。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mov     eax, [ebp+var_450]</span><br><span class="line">movsx   ecx, [ebp+eax+var_44]</span><br><span class="line">add     ecx, 1</span><br><span class="line">mov     edx, [ebp+var_450]</span><br><span class="line">mov     [ebp+edx+var_44], cl</span><br><span class="line">jmp     short loc_401E08</span><br></pre></td></tr></table></figure>
+<p>会对所得密文的每一位进行加1操作。<br>
+所得结果与<code>1f2e28649c4g:25:8bb:24c3D3EGF6GFg22dff</code>进行比较。<br>
+解的前4字节为<code>Seey</code>，后面需添加至少一个符合输入范围要求的字符。</p>
+<h2 id="cpp-3">cpp.3</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lea     ecx, [ebp+var_14]</span><br><span class="line">push    ecx             ; char *</span><br><span class="line">call    _strlen</span><br><span class="line">add     esp, 4</span><br><span class="line">mov     [ebp+var_18], eax</span><br><span class="line">cmp     [ebp+var_18], 8</span><br></pre></td></tr></table></figure>
+<p>要求输入长度为8个字符。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">mov     ecx, [ebp+var_4]</span><br><span class="line">movsx   edx, [ebp+ecx+var_14]</span><br><span class="line">and     edx, 7Eh</span><br><span class="line">mov     eax, [ebp+var_4]</span><br><span class="line">movsx   ecx, [ebp+eax+var_14]</span><br><span class="line">and     ecx, 80h</span><br><span class="line">sar     ecx, 7</span><br><span class="line">or      edx, ecx</span><br><span class="line">mov     eax, [ebp+var_4]</span><br><span class="line">movsx   ecx, [ebp+eax+var_14]</span><br><span class="line">and     ecx, 1</span><br><span class="line">shl     ecx, 7</span><br><span class="line">or      edx, ecx</span><br><span class="line">mov     eax, [ebp+var_4]</span><br><span class="line">mov     [ebp+eax+var_14], dl</span><br><span class="line">mov     ecx, [ebp+var_4]</span><br><span class="line">movsx   edx, [ebp+ecx+var_14]</span><br><span class="line">mov     eax, [ebp+var_4]</span><br><span class="line">movsx   ecx, byte_429A38[eax]</span><br><span class="line">xor     edx, ecx</span><br><span class="line">mov     eax, [ebp+var_4]</span><br><span class="line">mov     [ebp+eax+var_14], dl</span><br><span class="line">jmp     short loc_401085</span><br></pre></td></tr></table></figure>
+<p>主要逻辑是取出每一字节的最高位和最低位，对两个位进行对调，再与byte_429A38进行异或。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mov     eax, [ebp+var_4]</span><br><span class="line">movsx   ecx, [ebp+eax+var_14]</span><br><span class="line">mov     edx, [ebp+var_4]</span><br><span class="line">movsx   eax, byte_429A30[edx]</span><br></pre></td></tr></table></figure>
+<p>所得结果与byte_429A30进行比较。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">byte_429A38为0x6,0x7,0x8,0x9,0x0A,0x0B,0x0C,0x0D</span><br><span class="line">byte_429A30为0x52,0x0C7,0x0C2,0x0CD,0x0EE,0x0EB,0x0FE,0x0F5</span><br></pre></td></tr></table></figure>
+<p>解密得flag为<code>TAKEeasy</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">0x6</span>,<span class="number">0x7</span>,<span class="number">0x8</span>,<span class="number">0x9</span>,<span class="number">0x0A</span>,<span class="number">0x0B</span>,<span class="number">0x0C</span>,<span class="number">0x0D</span>]</span><br><span class="line">b = [<span class="number">0x52</span>,<span class="number">0x0C7</span>,<span class="number">0x0C2</span>,<span class="number">0x0CD</span>,<span class="number">0x0EE</span>,<span class="number">0x0EB</span>,<span class="number">0x0FE</span>,<span class="number">0x0F5</span>]</span><br><span class="line">c = []</span><br><span class="line">mid = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">8</span>):</span><br><span class="line">	mid = a[i]^b[i]</span><br><span class="line">	mid = ((mid &amp; <span class="number">0x80</span>) &gt;&gt; <span class="number">7</span>) | ((mid &amp; <span class="number">0x1</span>) &lt;&lt; <span class="number">7</span>) | (mid &amp; <span class="number">0x7E</span>)</span><br><span class="line">	c.append(<span class="built_in">chr</span>(mid))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>.join(c))</span><br></pre></td></tr></table></figure>
+<h2 id="cpp-4">cpp.4</h2>
+<p>简单的花指令。主要是我比较SB，脑子抽了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">cmp     dword ptr [ebp-8], 0Eh</span><br><span class="line">jge     short loc_4010F5</span><br><span class="line">mov     ecx, [ebp-8]</span><br><span class="line">xor     edx, edx</span><br><span class="line">mov     dl, byte_42CCBC[ecx]</span><br><span class="line">xor     edx, 0FFh</span><br><span class="line">mov     eax, [ebp-8]</span><br><span class="line">mov     byte_42CCBC[eax], dl</span><br><span class="line">mov     ecx, [ebp-8]</span><br><span class="line">xor     edx, edx</span><br><span class="line">mov     dl, byte_42CCBC[ecx]</span><br><span class="line">mov     eax, [ebp-8]</span><br><span class="line">xor     ecx, ecx</span><br><span class="line">mov     cl, byte_429A30[eax]</span><br><span class="line">sub     edx, ecx</span><br><span class="line">mov     eax, [ebp-4]</span><br><span class="line">add     eax, edx</span><br><span class="line">mov     [ebp-4], eax</span><br><span class="line">jmp     short loc_4010AA</span><br></pre></td></tr></table></figure>
+<p>主要逻辑是将42CCBC处（根据前面的代码可以很容易的分析出这里存储的是我们输入的字符串）先取反（与0xFF异或的等价操作，我分析的时候没有看到）与429A30处字符串相减。将结果存入var_4中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">429A30处字符串为0xBD,0x9A,0x9E,0x8B,0xD5,0xCF,0x92,0x96,0x9C,0x8D,0x90,0x91,0xD5,0xDE</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> loc_4010F5:</span><br><span class="line">.text:004010F5 33 C0              xor     eax, eax</span><br><span class="line">.text:004010F7 74 03              jz      short near ptr loc_4010FB+1</span><br><span class="line">.text:004010F9 75 00              jnz     short $+2</span><br><span class="line">.text:004010FB</span><br><span class="line">.text:004010FB  loc_4010FB:</span><br><span class="line">.text:004010FB</span><br><span class="line">.text:004010FB E9 83 7D FC 00     jmp     near ptr 13C8E83h</span><br></pre></td></tr></table></figure>
+<p>0x4010FB处jmp指令指向一个无效地址。0x4010F7的jz指令是跳转到0x4010FB的下一字节，因为xor eax,eax语句计算结果恒为零，所以jz跳转一定会发生，而我们程序执行结果不变的情况下，很容易看出0x4010FB处的一个字节是垃圾数据，只需要将其nop掉即可。我们直接通过Patch将0x4010FB处的一个字节修改为90，从而将其修改为nop。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.text:004010F5 33 C0         xor     eax, eax</span><br><span class="line">.text:004010F7 74 03         jz      short loc_4010FC</span><br><span class="line">.text:004010F9 75 00         jnz     short $+2</span><br><span class="line">.text:004010FB</span><br><span class="line">.text:004010FB                         </span><br><span class="line">loc_4010FB:</span><br><span class="line">.text:004010FB 90            nop</span><br><span class="line">.text:004010FC</span><br><span class="line">.text:004010FC                         </span><br><span class="line">loc_4010FC:</span><br><span class="line">.text:004010FC 83 7D FC 00   cmp     dword ptr [ebp-4], 0</span><br><span class="line">.text:00401100 75 0F         jnz     short loc_401111</span><br></pre></td></tr></table></figure>
+<p>修改后的代码如上。对于<code>cmp     dword ptr [ebp-4], 0</code>这条语句，我本来准备直接爆破，后来发现字符串直接取反就行了（乐）。<br>
+flag为<code>Beat*0micron*!</code>。</p>
+<h2 id="cpp-5">cpp.5</h2>
+<p>如果用ida的graph view很容易看出是异常处理。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">loc_4014AC:</span><br><span class="line">cmp     [ebp+var_1C], 5</span><br><span class="line">jge     short loc_4014F6</span><br><span class="line">loc_4014F6:</span><br><span class="line">mov     [ebp+ms_exc.registration.TryLevel], 0</span><br><span class="line">mov     ecx, [ebp+var_1C]</span><br><span class="line">sub     ecx, 5</span><br><span class="line">mov     eax, 1</span><br><span class="line">cdq</span><br><span class="line">idiv    ecx</span><br><span class="line">test    eax, eax</span><br><span class="line">jz      short loc_40151E</span><br></pre></td></tr></table></figure>
+<p>jge进行跳转，当jge初次跳转时，var_1C处值为5，ecx减去5后为0，调用除法指令会出现除零异常。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">mov     edx, [ebp+var_14]</span><br><span class="line">movsx   eax, byte_42CD78[edx]</span><br><span class="line">cmp     eax, 61h</span><br><span class="line">jl      short loc_4013A4</span><br><span class="line">mov     ecx, [ebp+var_14]</span><br><span class="line">movsx   edx, byte_42CD78[ecx]</span><br><span class="line">cmp     edx, 7Ah</span><br><span class="line">jg      short loc_4013A4</span><br><span class="line">mov     [ebp+var_18], 61h</span><br><span class="line">mov     eax, [ebp+var_14]</span><br><span class="line">movsx   ecx, byte_42CD78[eax]</span><br><span class="line">sub     ecx, [ebp+var_18]</span><br><span class="line">mov     [ebp+var_1C], ecx</span><br><span class="line">mov     eax, [ebp+var_1C]</span><br><span class="line">imul    eax, [ebp+var_4]</span><br><span class="line">add     eax, [ebp+var_8]</span><br><span class="line">cdq</span><br><span class="line">mov     ecx, 1Ah</span><br><span class="line">idiv    ecx</span><br><span class="line">mov     [ebp+var_1C], edx</span><br><span class="line">mov     edx, [ebp+var_1C]</span><br><span class="line">add     edx, [ebp+var_18]</span><br><span class="line">mov     eax, [ebp+var_14]</span><br><span class="line">mov     byte_42CD78[eax], dl</span><br><span class="line">loc_4013A4:</span><br><span class="line">mov     ecx, [ebp+var_14]</span><br><span class="line">movsx   edx, byte_42CD78[ecx]</span><br><span class="line">cmp     edx, 41h</span><br><span class="line">jl      short loc_4013FD</span><br><span class="line">mov     eax, [ebp+var_14]</span><br><span class="line">movsx   ecx, byte_42CD78[eax]</span><br><span class="line">cmp     ecx, 5Ah</span><br><span class="line">jg      short loc_4013FD</span><br><span class="line">mov     [ebp+var_18], 41h</span><br><span class="line">mov     edx, [ebp+var_14]</span><br><span class="line">movsx   eax, byte_42CD78[edx]</span><br><span class="line">sub     eax, [ebp+var_18]</span><br><span class="line">mov     [ebp+var_1C], eax</span><br><span class="line">mov     eax, [ebp+var_1C]</span><br><span class="line">imul    eax, [ebp+var_4]</span><br><span class="line">add     eax, [ebp+var_8]</span><br><span class="line">cdq</span><br><span class="line">mov     ecx, 1Ah</span><br><span class="line">idiv    ecx</span><br><span class="line">mov     [ebp+var_1C], edx</span><br><span class="line">mov     edx, [ebp+var_1C]</span><br><span class="line">add     edx, [ebp+var_18]</span><br><span class="line">mov     eax, [ebp+var_14]</span><br><span class="line">mov     byte_42CD78[eax], dl</span><br></pre></td></tr></table></figure>
+<p>异常处理函数内部逻辑比较简单，就是对我们输入的字符串中的字母应用仿射加密，其中乘数（var_4）为3，var_8为7。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mov     edx, [ebp+var_8]</span><br><span class="line">movsx   eax, byte_42CD78[edx]</span><br><span class="line">mov     ecx, [ebp+var_8]</span><br><span class="line">cmp     eax, dword_429A44[ecx*4]</span><br><span class="line">jz      short loc_4012AA</span><br></pre></td></tr></table></figure>
+<p>与429A44处进行比较。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">429A44处字符串为wohz&#123;M1hu-71-4h0-9t-h-!&#125;</span><br></pre></td></tr></table></figure>
+<p>解密得flag为<code>flag&#123;T1an-71-4a0-9e-a-!&#125;</code>。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://iamvegetable2.github.io">Lin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://iamvegetable2.github.io/2022/07/re2022/">https://iamvegetable2.github.io/2022/07/re2022/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://iamvegetable2.github.io" target="_blank">My Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/re/">re</a></div><div class="post_share"><div class="social-share" data-image="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/07/buuoj-pwn-wp1/"><img class="prev-cover" src="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png" onerror="onerror=null;src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">BUUOJ pwn wp 1</div></div></a></div><div class="next-post pull-right"><a href="/2022/07/re2021/"><img class="next-cover" src="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png" onerror="onerror=null;src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2021逆向期末试题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/07/dynamic-linking/" title="动态链接过程"><img class="cover" src="/img/5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-27</div><div class="title">动态链接过程</div></div></a></div><div><a href="/2022/07/re2020/" title="2020逆向期末试题"><img class="cover" src="/img/5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-15</div><div class="title">2020逆向期末试题</div></div></a></div><div><a href="/2022/07/re2021/" title="2021逆向期末试题"><img class="cover" src="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-15</div><div class="title">2021逆向期末试题</div></div></a></div><div><a href="/2022/07/stack-overflow/" title="栈溢出原理"><img class="cover" src="/img/5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-27</div><div class="title">栈溢出原理</div></div></a></div><div><a href="/2022/07/some-problems-about-movaps/" title="ubuntu18及以上堆栈平衡的问题"><img class="cover" src="/img/5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-27</div><div class="title">ubuntu18及以上堆栈平衡的问题</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/16664460170395a0301b2df94e85a205610aaee598fd9ab6c.jpg" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Lin</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/iamvegetable2" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:lyz050980@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#cpp-1"><span class="toc-number">1.</span> <span class="toc-text">cpp.1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cpp-2"><span class="toc-number">2.</span> <span class="toc-text">cpp.2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cpp-3"><span class="toc-number">3.</span> <span class="toc-text">cpp.3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cpp-4"><span class="toc-number">4.</span> <span class="toc-text">cpp.4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cpp-5"><span class="toc-number">5.</span> <span class="toc-text">cpp.5</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/pku-sa/" title="pku软件分析一"><img src="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="pku软件分析一"/></a><div class="content"><a class="title" href="/2024/11/pku-sa/" title="pku软件分析一">pku软件分析一</a><time datetime="2024-11-09T17:47:08.000Z" title="发表于 2024-11-10 01:47:08">2024-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/cps-hw/" title="信息物理系统安全作业汇总"><img src="/img/5.png" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="信息物理系统安全作业汇总"/></a><div class="content"><a class="title" href="/2024/11/cps-hw/" title="信息物理系统安全作业汇总">信息物理系统安全作业汇总</a><time datetime="2024-11-09T17:43:40.000Z" title="发表于 2024-11-10 01:43:40">2024-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/bkjh/" title="补坑计划"><img src="/img/5.png" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="补坑计划"/></a><div class="content"><a class="title" href="/2024/11/bkjh/" title="补坑计划">补坑计划</a><time datetime="2024-10-31T18:24:13.000Z" title="发表于 2024-11-01 02:24:13">2024-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/yl-crypto/" title="ylctf wp-crypto"><img src="/img/5.png" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="ylctf wp-crypto"/></a><div class="content"><a class="title" href="/2024/11/yl-crypto/" title="ylctf wp-crypto">ylctf wp-crypto</a><time datetime="2024-10-31T18:04:53.000Z" title="发表于 2024-11-01 02:04:53">2024-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/test/" title="Go性能优化(水)"><img src="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="Go性能优化(水)"/></a><div class="content"><a class="title" href="/2024/09/test/" title="Go性能优化(水)">Go性能优化(水)</a><time datetime="2024-09-26T09:18:31.000Z" title="发表于 2024-09-26 17:18:31">2024-09-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Lin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async data-pjax src="/js/background.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>MIT6.S081（零）——资源汇总及注意事项 | My Blog</title><meta name="keywords" content="OS"><meta name="author" content="Lin"><meta name="copyright" content="Lin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="referrer" content="no-referrer"><meta name="description" content="包含了资源汇总和一些值得阅读的指北 资源汇总 主要资源  课程网站 课程视频油管版 课程教材2021版 xv6源代码 xv6文档  中文翻译资源  课程视频翻译：https:&#x2F;&#x2F;mit-public-courses-cn-translatio.gitbook.io&#x2F;mit6-s081&#x2F; (推荐) 早期xv6文档翻译(x86-64版)，缺点是太老了，学习MIT 6.828可以使用:  源代码传送门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MIT6.S081（零）——资源汇总及注意事项">
+<meta property="og:url" content="https://iamvegetable2.github.io/2022/10/MIT6-S081-1/index.html">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="包含了资源汇总和一些值得阅读的指北 资源汇总 主要资源  课程网站 课程视频油管版 课程教材2021版 xv6源代码 xv6文档  中文翻译资源  课程视频翻译：https:&#x2F;&#x2F;mit-public-courses-cn-translatio.gitbook.io&#x2F;mit6-s081&#x2F; (推荐) 早期xv6文档翻译(x86-64版)，缺点是太老了，学习MIT 6.828可以使用:  源代码传送门">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://iamvegetable2.github.io/img/5.png">
+<meta property="article:published_time" content="2022-10-28T09:43:18.000Z">
+<meta property="article:modified_time" content="2025-01-22T07:29:33.000Z">
+<meta property="article:author" content="Lin">
+<meta property="article:tag" content="OS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://iamvegetable2.github.io/img/5.png"><link rel="shortcut icon" href="/img/26cd6c3cb17752c6.jpg"><link rel="canonical" href="https://iamvegetable2.github.io/2022/10/MIT6-S081-1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MIT6.S081（零）——资源汇总及注意事项',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-01-22 15:29:33'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/newcss.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/16664460170395a0301b2df94e85a205610aaee598fd9ab6c.jpg" onerror="onerror=null;src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">My Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">MIT6.S081（零）——资源汇总及注意事项</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-28T09:43:18.000Z" title="发表于 2022-10-28 17:43:18">2022-10-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-01-22T07:29:33.000Z" title="更新于 2025-01-22 15:29:33">2025-01-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/OS/">OS</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="MIT6.S081（零）——资源汇总及注意事项"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p>包含了资源汇总和一些值得阅读的指北</p>
+<h2 id="资源汇总">资源汇总</h2>
+<h3 id="主要资源">主要资源</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2021/schedule.html">课程网站</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=L6YqHxYHa7A">课程视频油管版</a></li>
+<li><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2021/xv6/book-riscv-rev2.pdf">课程教材2021版</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mit-pdos/xv6-riscv">xv6源代码</a></li>
+<li><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2021/xv6/book-riscv-rev2.pdf">xv6文档</a></li>
+</ul>
+<h3 id="中文翻译资源">中文翻译资源</h3>
+<ul>
+<li>课程视频翻译：<a target="_blank" rel="noopener" href="https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/">https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/</a> (推荐)</li>
+<li>早期xv6文档翻译(x86-64版)，缺点是太老了，学习MIT 6.828可以使用:  <a target="_blank" rel="noopener" href="https://github.com/ranxian/xv6-chinese">源代码传送门</a> 和 <a target="_blank" rel="noopener" href="https://th0ar.gitbooks.io/xv6-chinese/content/">gitbook传送门</a></li>
+<li>新版，但机翻比较严重：<a target="_blank" rel="noopener" href="https://blog.betteryuan.top/archives/xv6-riscv-book-zh-cn">https://blog.betteryuan.top/archives/xv6-riscv-book-zh-cn</a></li>
+<li>RISC-V版，翻译有点小问题，建议对照issue查看：<a target="_blank" rel="noopener" href="https://github.com/zhenyu-zang/xv6-riscv-book-Chinese">https://github.com/zhenyu-zang/xv6-riscv-book-Chinese</a> (推荐)</li>
+<li>文档+实验, all in one: <a target="_blank" rel="noopener" href="http://xv6.dgs.zone/">http://xv6.dgs.zone/</a> (推荐)</li>
+</ul>
+<h3 id="部分可供参考的资源">部分可供参考的资源</h3>
+<ul>
+<li>xv6book阅读：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/dreamer-q/p/17816963.html">https://www.cnblogs.com/dreamer-q/p/17816963.html</a></li>
+<li>资源汇总: <a target="_blank" rel="noopener" href="https://tarplkpqsm.feishu.cn/docs/doccnBFsXFMsAr1oXEVsaT9E3Jg">https://tarplkpqsm.feishu.cn/docs/doccnBFsXFMsAr1oXEVsaT9E3Jg</a> (推荐)</li>
+<li>视频讲解: <a target="_blank" rel="noopener" href="https://space.bilibili.com/1040264970/">https://space.bilibili.com/1040264970/</a> (还没看www)</li>
+<li>老教授版讲解: <a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLbtzT1TYeoMhTPzyTZboW_j7TPAnjv9XB">https://www.youtube.com/playlist?list=PLbtzT1TYeoMhTPzyTZboW_j7TPAnjv9XB</a> (推荐)</li>
+<li>实验讲解: <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ou41127p9/?vd_source=c35e5a8a155a8438a63d9b344d7ea4cc">https://www.bilibili.com/video/BV1ou41127p9/?vd_source=c35e5a8a155a8438a63d9b344d7ea4cc</a></li>
+<li>同讲解：<a target="_blank" rel="noopener" href="https://space.bilibili.com/16765968">https://space.bilibili.com/16765968</a></li>
+<li>xv6-rust实现: <a target="_blank" rel="noopener" href="https://github.com/KuangjuX">https://github.com/KuangjuX</a></li>
+</ul>
+<h3 id="一些可参考博客">一些可参考博客</h3>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://doraemonzzz.com/tags/6-S081/">doraemonzzz</a></li>
+<li><a target="_blank" rel="noopener" href="https://fanxiao.tech/posts/2021-03-02-mit-6s081-notes/">fanxiao</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.miigon.net/categories/mit6-s081/">miigon</a></li>
+<li><a target="_blank" rel="noopener" href="https://walkerzf.github.io/categories/6-S081/index.html">walkerzf</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013577996/article/details/108679997">解析</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/PKUFlyingPig/MIT6.S081-2020fall">PKUFlyingPig</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/weijunji/tag/XV6/">星见遥</a></li>
+<li><a target="_blank" rel="noopener" href="https://ttzytt.com/tags/xv6/">tzyt</a></li>
+</ul>
+<h2 id="实验环境配置">实验环境配置</h2>
+<p><a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2021/tools.html">指南</a></p>
+<p>ubuntu安装(windows wsl如果使用的是ubuntu镜像，也是这个用法)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git build-essential gdb-multiarch qemu-system-misc gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu</span><br></pre></td></tr></table></figure>
+<p>如果出现qemu卡在最后一步启动shell，可以试试降低qemu版本到实验指定的版本或者提升xv6的版本(可以试试比较新的代码，2021版貌似修复了这个问题)，后续可能会研究一下这个问题(大概，心虚)。</p>
+<p>其他问题可以按照<a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2021/tools.html">官网</a>的方法逐个排查，或者看<a target="_blank" rel="noopener" href="https://tarplkpqsm.feishu.cn/docs/doccnBFsXFMsAr1oXEVsaT9E3Jg">飞书文档</a>。</p>
+<h2 id="实验说明">实验说明</h2>
+<p>直接翻译自<a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2023/labs/guidance.html">官网</a>，以下内容值得阅读。</p>
+<h3 id="实验难度">实验难度</h3>
+<p>每个实验都具有相应的难度</p>
+<ul>
+<li>Easy：不到一个小时。热身。</li>
+<li>Moderate：1-2小时。</li>
+<li>Hard：超过2个小时。这些练习通常不需要很多代码，但是代码很难正确。</li>
+</ul>
+<p>这些时间只是粗略估计。对于一些可选作业，没有答案，难度只是胡乱猜测。<br>
+这些实验通常不需要很多代码(几十到几百行) ，但是在概念上很复杂，而且细节很重要。所以，在你写任何代码之前，一定要完成指定的阅读，通读相关文件，查阅文档(RISC-V手册等存放在了<a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2023/reference.html">参考页面</a>上)。只有当你确实掌握了任务及其解决方案，再开始编码。当你开始编写代码的时候，一小步一小步地实现你的解决方案(作业通常会建议如何将问题分解为更小的步骤)，并且在继续下一个步骤之前测试每个步骤是否正常工作。</p>
+<blockquote>
+<p>警告:不要在实验截止日期的前一天晚上开始实验;在数天内分批次完成实验更节省时间。操作系统内核中错误的表现形式可能令人困惑，需要经过深思熟虑和仔细调试才能理解和修复。 引用这段话的目的是为了警醒我不要再鸽了。</p>
+</blockquote>
+<h3 id="调试技巧-重要">调试技巧(重要)</h3>
+<p>1.确保你真正理解了C和指针。Kernighan和Ritchie的《C程序设计语言》一书对C语言进行了简要的描述。这里有一些有用的指针练习。不要跳过或略读以下的指针练习，除非你已经完全掌握了C语言。如果你不能真正理解C语言中的指针，你将在实验中遭受难以言喻的痛苦，最终以一种艰难的方式来理解它们。相信我们，你不会想知道什么是“艰难的路”的。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">f</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a[<span class="number">4</span>];</span><br><span class="line">    <span class="type">int</span> *b = <span class="built_in">malloc</span>(<span class="number">16</span>);</span><br><span class="line">    <span class="type">int</span> *c;</span><br><span class="line">    <span class="type">int</span> i;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;1: a = %p, b = %p, c = %p\n&quot;</span>, a, b, c);</span><br><span class="line"></span><br><span class="line">    c = a;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">	    a[i] = <span class="number">100</span> + i;</span><br><span class="line">    c[<span class="number">0</span>] = <span class="number">200</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;2: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n&quot;</span>,</span><br><span class="line">	   a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>]);</span><br><span class="line"></span><br><span class="line">    c[<span class="number">1</span>] = <span class="number">300</span>;</span><br><span class="line">    *(c + <span class="number">2</span>) = <span class="number">301</span>;</span><br><span class="line">    <span class="number">3</span>[c] = <span class="number">302</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;3: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n&quot;</span>,</span><br><span class="line">	   a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>]);</span><br><span class="line"></span><br><span class="line">    c = c + <span class="number">1</span>;</span><br><span class="line">    *c = <span class="number">400</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;4: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n&quot;</span>,</span><br><span class="line">	   a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>]);</span><br><span class="line"></span><br><span class="line">    c = (<span class="type">int</span> *) ((<span class="type">char</span> *) c + <span class="number">1</span>);</span><br><span class="line">    *c = <span class="number">500</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;5: a[0] = %d, a[1] = %d, a[2] = %d, a[3] = %d\n&quot;</span>,</span><br><span class="line">	   a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>]);</span><br><span class="line"></span><br><span class="line">    b = (<span class="type">int</span> *) a + <span class="number">1</span>;</span><br><span class="line">    c = (<span class="type">int</span> *) ((<span class="type">char</span> *) a + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;6: a = %p, b = %p, c = %p\n&quot;</span>, a, b, c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> ac, <span class="type">char</span> **av)</span></span><br><span class="line">&#123;</span><br><span class="line">    f();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一些习惯用法特别值得记住:</p>
+<ul>
+<li>如果<code>int *p = (int*)100</code>，那么<code>(int)p + 1</code>及<code>(int)(p + 1)</code>是不同的，第一个是101，但第二个是104。当向指针添加一个整数时，如第二种情况，整数被隐式地乘以指针指向的对象的大小。</li>
+<li><code>p[i]</code>被定义为与<code>*(p+i)</code>相同，指向内存中p指向的第i个元素，当元素大于1字节时，上面所说的加法规则有利于此定义工作。</li>
+<li><code>&amp;p[i]</code>等同于<code>(p+i)</code><br>
+大多数C程序并不需要在指针和整数之间进行强制转换，但操作系统经常需要这样做。每当您看到一个包含内存地址的加法时，问问自己它是整数加法还是指针加法，并确保所添加的值是否适当地相乘。</li>
+</ul>
+<p>2.如果您完成了一部分练习，请通过提交代码来检查你的进度。如果您稍后修改了某些东西，那么您可以回滚到您的检查点，然后以较小的改动继续前进。要了解关于Git的更多信息，请查看<a target="_blank" rel="noopener" href="https://mirrors.edge.kernel.org/pub/software/scm/git/docs/user-manual.html">Git用户手册</a>，这个<a target="_blank" rel="noopener" href="https://eagain.net/articles/git-for-computer-scientists/">面向计算机科学家的Git概述</a>也非常有用。<br>
+3.如果您没有通过测试，确保您了解为什么您的代码没有通过测试。插入<code>printf</code>语句，直到您理解发生了什么。<br>
+4.您可能会发现您的<code>printf</code>语句可能会产生许多您想要搜索的输出；其中一种方法是在<code>script</code>内部运行<code>make qemu</code>(在您的机器上运行<code>man script</code>)，它将所有控制台输出记录到一个文件中，然后您可以搜索该文件。别忘了退出<code>script</code>。(也许grep也可以？)<br>
+5.在多数情况下，<code>printf</code>语句就足够了，但有时我们希望可以单步遍历一些汇编代码或检查堆栈上的变量。要在xv6中使用gdb，请在一个窗口中运行<code>make qemu-gdb</code>，在另一个窗口中运行<code>gdb-multiarch</code>(或<code>riscv64-linux-gnu-gdb</code>)，设置断点，后跟<code>c</code>(continue)，xv6将一直运行，直到到达断点。(有关有用的GDB提示，请参阅<a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2019/lec/gdb_slides.pdf">使用GNU调试器</a>和<a target="_blank" rel="noopener" href="https://pdos.csail.mit.edu/6.828/2023/labs/gdb.html">tips</a>)。如果你看到形如&quot;warning: File “…/.gdbinit” auto-loading has been declined&quot;的错误，编辑<code>~/.gdbinit</code>，添加&quot;add-auto-load-safe-path…&quot;。<br>
+6.如果希望查看编译器为xv6内核生成的汇编代码，或者查找特定内核地址处的指令，请参阅文件<code>kernel/kernel.asm</code>，这个文件会在make的过程中产生。（其他程序也有对应的<code>.asm</code>文件）<br>
+7.如果内核出现了意外错误(例如访问无效的内存地址)，它将在崩溃点打印一条错误消息，其中包括程序计数器(“sepc”); 可以搜索<code>kernel.asm</code>查找程序计数器崩溃时在哪个函数，或者您可以运行<code>addr2line -e kernel/kernel $&#123;pc-value&#125;</code>(运行<code>man addr2line</code>了解详细信息)。如果你想获得错误的详细信息，使用gdb重新启动:在一个窗口中运行<code>make qemu-gdb</code>，在另一个窗口中运行<code>gdb-multiarch</code>(或<code>riscv64-linux-gnu-gdb</code>)，在panic (<code>b panic</code>)中设置断点，然后在后面跟着<code>c</code> (continue)。当内核到达断点时，输入<code>bt</code>以获得信息。<br>
+8.如果您的内核挂起(例如，由于死锁)，您可以使用gdb查找挂起的位置。在一个窗口中运行<code>make qemu-gdb</code>，在另一个窗口中运行<code>gdb-multiarch</code>(或<code>riscv64-linux-gnu-gdb</code>)，后跟<code>c</code>(continue)。当挂起发生时，在qemu-gdb窗口<code>ctrl+c</code>停止运行，然后输入<code>bt</code>以获得信息。<br>
+9.<code>qemu</code>有一个“监视器”，允许您查询虚拟机的状态。您可以通过输入<code>control-a c</code>（c表示控制台）来使用它。一个特别有用的monitor命令是<code>info mem</code>，用于打印页表。您可能需要使用<code>cpu</code>命令来选择<code>info mem</code>查看哪一个核心，或者可以使用<code>make CPUS=1 qemu</code>启动qemu，以使其只有一个核心。</p>
+<h3 id="在实验中使用GDB">在实验中使用GDB</h3>
+<p>在一个窗口中操作(确保在<code>xv6-labs-2023</code>目录下)使用<code>make qemu-gdb</code>，注意输出的最后一行会包含<code>tcp::&lt;PORT NUMBER HERE&gt;</code>。<br>
+在第二个窗口中使用<code>riscv64-linux-gnu-gdb</code>(或者<code>gdb-multiarch</code>)，在gdb界面输入<code>target remote localhost:&lt;PORT NUMBER ABOVE&gt;</code><br>
+假设您想在内核每次进入函数sycall(在从kernel/sycall.c)时中断：</p>
+<ul>
+<li>在gdb界面输入<code>file kernel/kernel</code> (这是包含了所有kernel代码的二进制文件)</li>
+<li>在gdb界面输入<code>b syscall</code></li>
+<li><code>c</code>运行</li>
+</ul>
+<p>假设您想在<code>user/ls.c</code>的ls中设置断点，可以输入<code>file user/_ls</code>和<code>b ls</code></p>
+<h3 id="使用GDB的常见问题">使用GDB的常见问题</h3>
+<ol>
+<li>从错误的目录运行GDB。您需要在<code>xv6-labs-2023</code>目录下运行<code>make qemu-gdb</code>和<code>riscv64-linux-gnu-gdb</code>(或者<code>gdb-multiarch</code>)。不是在<code>~</code>中，也不是在<code>xv6-labs-2023/kernel</code>或<code>xv6-labs-2023/user</code>中。比如以下的惨痛教训。<br>
+<img src="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/MIT6-S081-1/2024-09-01%20215225.png" alt="惨痛教训"></li>
+<li>运行错误的GDB类型。<code>gdb</code>命令通常无法直接识别RISC-V的机器码。你需要<code>riscv64-linux-gnu-gdb</code>(或者<code>gdb-multiarch</code>)</li>
+<li>GDB无法找到您要调试的内容。您可能需要运行<code>target remote localhost:&lt;对应目标的端口号&gt;</code></li>
+<li>未添加要调试的文件。如果您得到关于运行<code>file</code>命令或未知符号的错误，则需要运行<code>file kernel/kernel</code>，以便gdb知道在哪里查找要调试的代码。</li>
+<li>如果退出GDB，然后重新运行<code>riscv64-linux-gnu-gdb</code>(或者<code>gdb-multiarch</code>)，而不重新运行<code>make qemu-gdb</code>，可能会出问题（大概率不会），这时候需要将两个都重启。</li>
+<li>刚开始使用GDB是很烦人的，但它在后来的实验中非常非常有帮助，知道基本的命令可以在以后的调试中减少痛苦。</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://iamvegetable2.github.io">Lin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://iamvegetable2.github.io/2022/10/MIT6-S081-1/">https://iamvegetable2.github.io/2022/10/MIT6-S081-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://iamvegetable2.github.io" target="_blank">My Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OS/">OS</a></div><div class="post_share"><div class="social-share" data-image="/img/5.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/MIT6-824-1/"><img class="prev-cover" src="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png" onerror="onerror=null;src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">MIT6.824_1</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/missing-semester-2/"><img class="next-cover" src="/img/5.png" onerror="onerror=null;src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">missing-semester学习（二）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/09/MIT6-S081-lab1/" title="MIT 6.S081 实验1-Util"><img class="cover" src="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-01</div><div class="title">MIT 6.S081 实验1-Util</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/16664460170395a0301b2df94e85a205610aaee598fd9ab6c.jpg" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Lin</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/iamvegetable2" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:lyz050980@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB"><span class="toc-number">1.</span> <span class="toc-text">资源汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E8%B5%84%E6%BA%90"><span class="toc-number">1.1.</span> <span class="toc-text">主要资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91%E8%B5%84%E6%BA%90"><span class="toc-number">1.2.</span> <span class="toc-text">中文翻译资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E5%88%86%E5%8F%AF%E4%BE%9B%E5%8F%82%E8%80%83%E7%9A%84%E8%B5%84%E6%BA%90"><span class="toc-number">1.3.</span> <span class="toc-text">部分可供参考的资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%8F%AF%E5%8F%82%E8%80%83%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.4.</span> <span class="toc-text">一些可参考博客</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">实验环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E"><span class="toc-number">3.</span> <span class="toc-text">实验说明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E9%9A%BE%E5%BA%A6"><span class="toc-number">3.1.</span> <span class="toc-text">实验难度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7-%E9%87%8D%E8%A6%81"><span class="toc-number">3.2.</span> <span class="toc-text">调试技巧(重要)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%AE%9E%E9%AA%8C%E4%B8%AD%E4%BD%BF%E7%94%A8GDB"><span class="toc-number">3.3.</span> <span class="toc-text">在实验中使用GDB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8GDB%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">3.4.</span> <span class="toc-text">使用GDB的常见问题</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/pku-sa/" title="pku软件分析一"><img src="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="pku软件分析一"/></a><div class="content"><a class="title" href="/2024/11/pku-sa/" title="pku软件分析一">pku软件分析一</a><time datetime="2024-11-09T17:47:08.000Z" title="发表于 2024-11-10 01:47:08">2024-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/cps-hw/" title="信息物理系统安全作业汇总"><img src="/img/5.png" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="信息物理系统安全作业汇总"/></a><div class="content"><a class="title" href="/2024/11/cps-hw/" title="信息物理系统安全作业汇总">信息物理系统安全作业汇总</a><time datetime="2024-11-09T17:43:40.000Z" title="发表于 2024-11-10 01:43:40">2024-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/bkjh/" title="补坑计划"><img src="/img/5.png" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="补坑计划"/></a><div class="content"><a class="title" href="/2024/11/bkjh/" title="补坑计划">补坑计划</a><time datetime="2024-10-31T18:24:13.000Z" title="发表于 2024-11-01 02:24:13">2024-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/yl-crypto/" title="ylctf wp-crypto"><img src="/img/5.png" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="ylctf wp-crypto"/></a><div class="content"><a class="title" href="/2024/11/yl-crypto/" title="ylctf wp-crypto">ylctf wp-crypto</a><time datetime="2024-10-31T18:04:53.000Z" title="发表于 2024-11-01 02:04:53">2024-11-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/test/" title="Go性能优化(水)"><img src="https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/5.png" onerror="this.onerror=null;this.src='https://gitee.com/vegetablechicken-dev/pic/raw/master/img/img/404.jpg'" alt="Go性能优化(水)"/></a><div class="content"><a class="title" href="/2024/09/test/" title="Go性能优化(水)">Go性能优化(水)</a><time datetime="2024-09-26T09:18:31.000Z" title="发表于 2024-09-26 17:18:31">2024-09-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Lin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async data-pjax src="/js/background.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

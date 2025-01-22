@@ -1,0 +1,16 @@
+/* 文章页背景 */
+.layout>#post {
+    /* 以下代表透明度为0.5 可以自行修改*/
+    background: rgba(255,255,255,.7);
+}
+.layout>#archieve{
+    background: rgba(255,255,255,.7);
+}
+/* 所有页面背景 */
+#aside_content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
+    /* 以下代表透明度为0.5 */
+    background: rgba(255,255,255,.7);
+}
+/* #web_bg{
+    background-image: url("/img/6.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("https://upimage.alexhchu.com/2020/10/19/34446d0d37dde.jpg");
+} */
